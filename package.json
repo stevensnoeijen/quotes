@@ -1,0 +1,38 @@
+{
+  "name": "quotes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch & nodemon dist",
+    "start": "node dist/index.js",
+    "lint": "eslint src --ext ts",
+    "tsc": "tsc"
+  },
+  "dependencies": {
+    "@types/node": "7.0.22",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.9"
+  },
+  "devDependencies": {
+    "@types/node": "7.0.22",
+    "eslint": "4.0.0",
+    "eslint-config-airbnb-base": "11.2.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-promise": "3.5.0",
+    "tsc": "1.20150623.0",
+    "typescript": "2.3.3",
+    "typescript-eslint-parser": "3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevensnoeijen/quotes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevensnoeijen/quotes/issues"
+  },
+  "homepage": "https://github.com/stevensnoeijen/quotes#readme"
+}
