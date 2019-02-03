@@ -6,17 +6,6 @@ class App {
   constructor () {
     this.express = express()
     this.express.use(express.static('public'))
-    this.mountRoutes()
-  }
-
-  private mountRoutes (): void {
-    const router = express.Router()
-    router.get('/', (req, res) => {
-      res.json({
-        message: 'Hello World!'
-      })
-    })
-    this.express.use('/', router)
   }
 }
 

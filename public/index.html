@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="example">
+      <p v-cloak>{{ quote }}</p>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        new Vue({
+            el: '#example',
+            data: { quote: 'loading quote...' },
+            mounted () {
+              axios
+                .get('http://quotes.stormconsultancy.co.uk/random.json')
+                .then(response => (this.quote = response.data.quote))
+            }
+        })
+    </script>
+  </body>
+</html>
