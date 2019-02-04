@@ -6,6 +6,15 @@ new Vue({
     mounted () {
       axios
         .get('http://quotes.stormconsultancy.co.uk/random.json')
-        .then(response => (this.quote = response.data.quote))
+        .then(response => {
+          this.quote = response.data.quote;
+          twttr.widgets.createShareButton(
+            '/',
+            document.getElementById('share'),
+            {
+              count: 'none',
+              text: response.data.quote
+            });
+        })
     }
 })

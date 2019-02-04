@@ -10,6 +10,25 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body class="text-center">
+    <script>
+      window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+          t._e.push(f);
+        };
+
+        return t;
+      }(document, "script", "twitter-wjs"));
+    </script>
+
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
         <div class="inner">
@@ -22,8 +41,8 @@
 
     <main id="main" role="main" class="inner cover">
       <p class="lead" v-cloak>{{ quote }}</p>
-      <p class="lead">
-        <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+      <p id="share" class="lead">
+
       </p>
     </main>
 
