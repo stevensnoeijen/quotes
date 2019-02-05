@@ -34,19 +34,19 @@
         <div class="inner">
           <h3 class="masthead-brand">Quotes</h3>
           <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="index.html">Home</a>
-            <a class="nav-link" href="popular.html">Popular</a>
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link active" href="popular.html">Popular</a>
           </nav>
         </div>
       </header>
 
     <main id="main" role="main" class="inner cover">
-      <p class="lead" v-cloak>
-        <span v-if="quote == null">Loading quote...</span>
-        <a v-if="quote != null" v-bind:href="quote.permalink">{{ quote.quote }} ({{ quote.author }})</a>
-      </p>
-      <p id="share" class="lead">
-
+      <p class="lead">
+        <p v-if="quotes.length == 0">Loading quotes...</p>
+        <p v-cloak v-for="quote in quotes">
+          <a v-bind:href="quote.permalink">{{ quote.quote }} ({{ quote.author }})</a>
+          <span class="twitterShare"></span>
+        </p>
       </p>
     </main>
 
@@ -56,7 +56,7 @@
       </div>
     </footer>
 
-    <script src="js/index.js"></script>
+    <script src="js/popular.js"></script>
   </div>
 
 
